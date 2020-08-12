@@ -1,0 +1,134 @@
+---
+work:
+  - workplace: HolidayCheck Solutions GmbH
+    role: Senior Software Engineer
+    period: 2018-2020
+    location: Munich, Germany
+    highlights:
+      - >-
+        Spearheaded the engineering and realization of the new "Travel API",
+        at the core of the company, with the goal of decreasing latencies and
+        increasing the flexibility compared to its predecessor. Written in
+        Scala, and mostly based on Akka-HTTP.
+      - >-
+        Contributed to the technical design of various ETL pipelines,
+        including a better recommendation engine for hotels, based on
+        (big-)data feeds setup by the data science department. The main focus
+        was on optimizing the model to be write-once, read-many. The systems
+        were then able to respond with recommendations in < 9 ms.
+      - >-
+        Launched the first microfrontend of the company: a shared header and
+        footer to make all the platforms belonging to HolidayCheck being
+        recognized under the same brand. Based on Preact and Unistore, the
+        delivered JS code is less than 30 kB gzipped and decreased the page
+        rendering time by up to 30%.
+      - >-
+        Relaunched the homepage of the company, packed with hardly-cacheable
+        personalized content, while keeping the load time down to merely 2 s.
+        Based on React (SSR), Redux, and a CSS-in-JS framework.
+      - >-
+        Optimized and automated integration and delivery pipelines, by
+        introducing concepts such as reproducible and hermetic builds and
+        leveraging infrastructure as code.
+      - >-
+        Realized a PoC tool for running visual regression tests and store and
+        deduplicate the golden files in cloud storage, loosely inspired by
+        git.
+  - workplace: Internations GmbH
+    role: Software Engineer
+    period: 2016-2018
+    location: Munich, Germany
+    highlights:
+      - >-
+        Led the frontend engineering efforts to build a new business vertical
+        as the first project using React in the company. The focus was on
+        maintaining a sustained delivery speed by leveraging modern
+        technologies.
+      - >-
+        Supported the remodernization of the "profile page", by leveraging the
+        React components and code infrastructure built for the previous
+        project.
+      - >-
+        Wrote a build tool in JS to speed-up the monolithic code-delivery
+        pipeline, and get rid of nondeterminism, to improve cacheability. The
+        time savings were above 90%.
+freelance:
+  - workplace: Mantua Bagni
+    role: DevOps Engineer
+    period: 2020
+    location: Mantova, Italy (Remote)
+    highlights:
+      - >-
+        Setup of a Shopify store with a custom theme, with GDPR compliancy and
+        automatic product bundles based on compatibility matrices.
+      - >-
+        Developed and deployed a control-loop software between the online store
+        and the internal ERP system, to sync warehouse availabilities, prices
+        and other metadata. Based on Scala and reactive streams.
+  - workplace: ELOS Srl
+    role: Software Engineer
+    period: 2015
+    location: Verona, Italy
+    highlights:
+      - >-
+        Realized a native app from scratch to control smart Wi-Fi aquarium
+        lamps, exclusively based on the documentation of the API.
+      - >-
+        Engineered a colorimeter's software, both the firmware and a native app
+        to control it, over Bluetooth and Wi-Fi.
+  - workplace: Anteklab Srl
+    role: DevOps Engineer
+    period: 2014
+    location: Mantova, Italy
+    highlights:
+      - >-
+        Developed and deployed a push notification proxy to APNS and GCM, to
+        connect the customer-owned appliances to the company's app in a secure
+        and private way. Written in Go.
+      - >-
+        Regular Intranet servers and infrastructure maintenance and expansion.
+  - workplace: MDM Srl
+    role: System Engineer and Help Desk
+    period: 2013
+    location: Mantova, Italy
+    highlights:
+      - >-
+        Regular Intranet maintenance, ie. workstations and server updates.
+      - >-
+        Setup of the internal "part management system" for CAD software, based
+        on Linux and Samba.
+      - >-
+        Setup of the company domain names, DNS, email server and website.
+  - workplace: Provenia Srl
+    role: System Engineer and Help Desk
+    period: 2011
+    location: Mantova, Italy
+    highlights:
+      - >-
+        Assisted customers over remote screen shares to troubleshoot issues.
+      - >-
+        Maintained customer servers (updates, software installs, ...) and a
+        centralize backup system with dynamic billing.
+      - >-
+        Migrated the legacy phone system over to VoIP.
+education:
+  - university: Università degli Studi di Trento
+    course: Bachelor of Science in Computer Science
+    projects:
+      - >-
+        Bootstrapped a client for a P2P network used in rural areas, to
+        broadcast live streams. Written in Go and React.
+languages:
+  - name: English
+    level: Proficient
+  - name: Italian
+    level: Native
+  - name: German
+    level: Basic
+interests:
+  - Nix/NixOS contributor on GitHub.
+  - Functional programming paradigm, Haskell.
+  - Information Security.
+  - Embedded, real-time, smart home systems and software-defined radios.
+  - Hiking and mountain-biking.
+  - Avid reader of news, blogs and sometimes books.

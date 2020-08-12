@@ -8,7 +8,10 @@ import {
   StyleSheetManager,
   createGlobalStyle,
 } from "styled-components";
+import YAML from "yaml";
 import { App } from "./App";
+import { StaticContext, StaticContextType } from "./staticContext";
+import { pipe } from "fp-ts/pipeable";
 
 const GlobalStyles = createGlobalStyle`
 html {
@@ -20,7 +23,7 @@ html {
 }
 `;
 
-const render = (App: React.ComponentType): IO.IO<string> => () => {
+const render = (appElement: JSX.Element): IO.IO<string> => () => {
   const renderAppWithStyles = () => {
     const sheet = new ServerStyleSheet();
     try {
@@ -28,7 +31,7 @@ const render = (App: React.ComponentType): IO.IO<string> => () => {
         <StyleSheetManager sheet={sheet.instance}>
           <>
             <GlobalStyles />
-            <App />
+            {appElement}
           </>
         </StyleSheetManager>
       );
@@ -48,6 +51,7 @@ const render = (App: React.ComponentType): IO.IO<string> => () => {
       <head>
         <title>Francesco Zanini - Curriculum Vitae</title>
         <meta name="robots" content="noindex,follow" />
+        <meta charSet="utf-8" />
         <link
           href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
           rel="stylesheet"
@@ -63,15 +67,30 @@ const render = (App: React.ComponentType): IO.IO<string> => () => {
   return "<!doctype html>" + ReactDOMServer.renderToStaticMarkup(shell);
 };
 
-const main = () => {
-  const makeDir: T.Task<void> = () => fse.mkdirp("dist/cv");
+const wrappedApp = (staticData: StaticContextType): JSX.Element => (
+  <StaticContext.Provider value={staticData}>
+    <App />
+  </StaticContext.Provider>
+);
 
-  const write = (content: string): T.Task<void> => () =>
-    fse.writeFile("dist/cv/index.html", content);
+const readStaticData: T.Task<any> = () =>
+  fse.readFile("static.yaml", "utf8").then((str) => YAML.parse(str));
 
-  const app = T.apSecond(T.chain(write)(T.fromIO(render(App))))(makeDir);
+const makeDir: T.Task<void> = () => fse.mkdirp("dist/cv");
 
-  return app();
-};
+const writeCv = (content: string): T.Task<void> => () =>
+  fse.writeFile("dist/cv/index.html", content);
 
-main();
+const renderWrappedApp = pipe(
+  readStaticData,
+  T.chain((staticData) => T.fromIO(render(wrappedApp(staticData))))
+);
+
+const renderAndWriteCv = T.chain(writeCv)(renderWrappedApp);
+
+const app = T.apSecond(renderAndWriteCv)(makeDir);
+
+app().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
