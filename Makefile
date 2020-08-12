@@ -4,7 +4,7 @@ all: cv
 
 .PHONY: cv
 cv: dist js
-	node index.js
+	node src/index.js
 
 .PHONY: js
 js:
