@@ -7,7 +7,7 @@ import {
   LanguageType,
 } from "./staticContext";
 
-const showPageMarker = true;
+const showPageMarker = false;
 const pagePaddingBottom = "0.56in";
 const pageSizes = ["210mm", "297mm"];
 
