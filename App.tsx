@@ -53,6 +53,8 @@ export const App = () => {
         <div className="grid grid-cols-3">
           <div>
             <ProfileImage className="mb-8 mx-auto rounded-full w-32" />
+            <SectionTitle>Soft-Skills</SectionTitle>
+            <div>TODO!</div>
             <SectionTitle>Interests</SectionTitle>
             {staticData.interests.map((v, i) => (
               <div key={`$entry-${i}`} className="text-xs">
@@ -65,6 +67,8 @@ export const App = () => {
                 <LanguageEntry language={v} key={`$entry-${i}`} />
               ))}
             </div>
+            <SectionTitle>Contacts</SectionTitle>
+            <div>TODO!</div>
           </div>
           <div className="col-span-2">
             <SectionTitle>Work Experience</SectionTitle>
