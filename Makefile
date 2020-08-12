@@ -8,7 +8,7 @@ cv: dist js
 
 .PHONY: js
 js:
-	yarn tsc
+	tsc
 
 dist:
 	mkdir -p dist

@@ -1,3 +1,3 @@
-{ pkgs ? import ./nix/pkgs.nix }:
+{ pkgs ? import ./. }:
 
 pkgs.mkShell { buildInputs = with pkgs; [ bashInteractive nodejs yarn ]; }
