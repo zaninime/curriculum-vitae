@@ -1,0 +1,31 @@
+name: Default
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install Nix
+      uses: cachix/install-nix-action@v10
+      with:
+        skip_adding_nixpkgs_channel: true
+  
+    - name: Setup Cachix
+      uses: cachix/cachix-action@v6
+      with:
+        name: zaninime-cv
+        signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
+
+    - name: Build
+      run: nix-build -A deployScript -o deploy-site
+
+    - name: Deploy
+      run: ./deploy-site --prod
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: francesco-zanini-me.netlify.app
