@@ -52,7 +52,7 @@ export const App = () => {
         <h1 className="text-2xl text-center">Francesco Zanini</h1>
         <div className="grid grid-cols-3">
           <div>
-            <ProfileImage className="mb-8 mx-auto rounded-full w-32" />
+            <ProfileImage className="my-8 mx-auto rounded-full w-32" />
             <SectionTitle>Soft-Skills</SectionTitle>
             <div>TODO!</div>
             <SectionTitle>Interests</SectionTitle>
