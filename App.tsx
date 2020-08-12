@@ -19,7 +19,9 @@ const Background = styled.div({
 });
 
 export const App = () => (
-  <Background>
-    <div>content</div>
+  <Background className="subpixel-antialiased">
+    <div>
+      <h1 className="text-xl text-center">Coming soon!</h1>
+    </div>
   </Background>
 );
