@@ -22,6 +22,12 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+.noprint {
+  @media only print {
+    display: none;
+  }
+}
 `;
 
 const render = (appElement: JSX.Element): IO.IO<string> => () => {

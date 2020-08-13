@@ -19,7 +19,7 @@ const Background = styled.div({
   },
 });
 
-const Paper = styled.div({
+const Paper = styled.main({
   "@media only screen": {
     background: "white",
     margin: "auto",
@@ -43,8 +43,13 @@ const Marker = styled.div({
   background: "red",
 });
 
-const SectionTitle = (props: JSX.IntrinsicElements["h2"]) => (
-  <h2 className="mb-2 text-2xl" {...props} />
+const SectionTitle = (
+  props: JSX.IntrinsicElements["h2"] & { spacing?: "big" }
+) => (
+  <h2
+    className={`${props.spacing === "big" ? "mb-4 mt-6" : "mb-2"} text-2xl`}
+    {...props}
+  />
 );
 
 export const App = () => {
@@ -60,19 +65,19 @@ export const App = () => {
             <h1 className="font-semibold text-2xl text-center mb-10">
               Francesco Zanini
             </h1>
-            <SectionTitle>Soft-Skills</SectionTitle>
+            <SectionTitle spacing="big">Soft-Skills</SectionTitle>
             <div>TODO!</div>
-            <SectionTitle>Interests</SectionTitle>
+            <SectionTitle spacing="big">Interests</SectionTitle>
             {staticData.interests.map((v, i) => (
               <div key={`$entry-${i}`}>{v}</div>
             ))}
-            <SectionTitle>Languages</SectionTitle>
+            <SectionTitle spacing="big">Languages</SectionTitle>
             <div className="flex flex-wrap">
               {staticData.languages.map((v, i) => (
                 <LanguageEntry language={v} key={`$entry-${i}`} />
               ))}
             </div>
-            <SectionTitle>Contacts</SectionTitle>
+            <SectionTitle spacing="big">Contacts</SectionTitle>
             <div>TODO!</div>
           </div>
           <div className="col-span-2">
@@ -91,6 +96,22 @@ export const App = () => {
           </div>
         </div>
       </Paper>
+      <footer className="mt-8 noprint text-center text-gray-700 text-sm">
+        <div>
+          Copyright &copy; {new Date().getFullYear()} Francesco Zanini. All
+          rights reserved.
+        </div>
+        <div>
+          Source code available on{" "}
+          <a
+            className="underline"
+            href="https://github.com/zaninime/curriculum-vitae"
+          >
+            GitHub
+          </a>
+          .
+        </div>
+      </footer>
     </Background>
   );
 };
