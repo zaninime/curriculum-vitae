@@ -117,10 +117,7 @@ export const App = () => {
 };
 
 const ProfileImage = (props: JSX.IntrinsicElements["img"]) => (
-  <img
-    {...props}
-    src="https://media-exp1.licdn.com/dms/image/C4D03AQEo9AQeKA1mJA/profile-displayphoto-shrink_200_200/0?e=1602720000&v=beta&t=bKNaQJzqXMPoGrAB0Pgvhv9Trj58vJleGiYurxPR3vU"
-  />
+  <img {...props} src="me.jpeg" />
 );
 
 const WorkEntry = ({ work }: { work: WorkType }) => (

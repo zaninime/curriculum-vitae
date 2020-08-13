@@ -1,4 +1,4 @@
-{ lib, stdenv, nodejs, yarn, yarn2nix-moretea, gitignoreSource }:
+{ lib, stdenv, nodejs, yarn, yarn2nix-moretea, gitignoreSource, rsync }:
 
 let
   pname = "curriculum-vitae";
@@ -21,7 +21,7 @@ in stdenv.mkDerivation {
       in relPath != "/nix";
   };
 
-  nativeBuildInputs = [ nodejs yarn ];
+  nativeBuildInputs = [ nodejs yarn rsync ];
 
   NODE_ENV = "production";
 
@@ -31,7 +31,7 @@ in stdenv.mkDerivation {
 
   buildPhase = ''
     ln -sf $nodeModules/node_modules .
-    make
+    make -j $NIX_BUILD_CORES
   '';
 
   installPhase = ''
