@@ -101,6 +101,19 @@ export const App = () => {
                 <pre>francesco-zanini</pre>
               </a>
             </div>
+            <div>
+              <a
+                className="flex items-center py-2"
+                href="https://github.com/zaninime"
+              >
+                <img
+                  className="mr-3 w-6"
+                  src="/icons/github.svg"
+                  alt="GitHub Profile"
+                />
+                <pre>zaninime</pre>
+              </a>
+            </div>
           </div>
           <div className="col-span-2">
             <SectionTitle>Work Experience</SectionTitle>
@@ -149,7 +162,7 @@ const WorkEntry = ({ work }: { work: WorkType }) => (
         <h3 className="text-lg font-semibold">{work.role}</h3>
         <h4 className="italic">{work.workplace}</h4>
       </div>
-      <div className="text-right">
+      <div className="text-right text-gray-700">
         {work.location}
         <br />
         {work.period}
