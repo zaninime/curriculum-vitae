@@ -16,6 +16,7 @@ import { pipe } from "fp-ts/pipeable";
 const GlobalStyles = createGlobalStyle`
 html {
   box-sizing: border-box;
+  font-size: 12px;
 }
 
 *, *:before, *:after {

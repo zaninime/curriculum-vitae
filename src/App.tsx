@@ -39,7 +39,7 @@ const Marker = styled.div({
 });
 
 const SectionTitle = (props: JSX.IntrinsicElements["h2"]) => (
-  <h2 className="my-2" {...props} />
+  <h2 className="my-2 text-2xl" {...props} />
 );
 
 export const App = () => {
@@ -49,17 +49,17 @@ export const App = () => {
     <Background className="subpixel-antialiased">
       <div style={showPageMarker ? { position: "relative" } : {}}>
         {showPageMarker && <Marker />}
-        <h1 className="text-2xl text-center">Francesco Zanini</h1>
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-3 gap-6">
           <div>
             <ProfileImage className="my-8 mx-auto rounded-full w-32" />
+            <h1 className="font-semibold text-2xl text-center mb-10">
+              Francesco Zanini
+            </h1>
             <SectionTitle>Soft-Skills</SectionTitle>
             <div>TODO!</div>
             <SectionTitle>Interests</SectionTitle>
             {staticData.interests.map((v, i) => (
-              <div key={`$entry-${i}`} className="text-xs">
-                {v}
-              </div>
+              <div key={`$entry-${i}`}>{v}</div>
             ))}
             <SectionTitle>Languages</SectionTitle>
             <div className="flex flex-wrap">
@@ -100,16 +100,17 @@ const ProfileImage = (props: JSX.IntrinsicElements["img"]) => (
 const WorkEntry = ({ work }: { work: WorkType }) => (
   <>
     <div className="flex items-end">
-      <h3 className="text-sm font-semibold flex-grow">
-        {work.role} / {work.period}
-      </h3>
-      <h4 className="text-xs text-right font-semibold">
-        {work.workplace}
-        <br />
+      <div className="flex-grow">
+        <h3 className="text-lg font-semibold">{work.role}</h3>
+        <h4 className="italic">{work.workplace}</h4>
+      </div>
+      <div className="text-right">
         {work.location}
-      </h4>
+        <br />
+        {work.period}
+      </div>
     </div>
-    <ul className="list-disc list-outside mt-1 ml-5 mb-2 text-xs">
+    <ul className="list-disc list-outside mt-1 ml-5 mb-2">
       {work.highlights.map((v, i) => (
         <li key={`$entry-${i}`}>{v}</li>
       ))}
@@ -120,8 +121,8 @@ const WorkEntry = ({ work }: { work: WorkType }) => (
 const EducationEntry = ({ education }: { education: EducationType }) => (
   <>
     <h3 className="text-sm font-semibold">{education.course}</h3>
-    <h4 className="text-xs font-semibold">{education.university}</h4>
-    <ul className="list-disc list-outside mt-1 ml-5 mb-2 text-xs">
+    <h4 className="font-semibold">{education.university}</h4>
+    <ul className="list-disc list-outside mt-1 ml-5 mb-2">
       {education.projects.map((v, i) => (
         <li key={`$entry-${i}`}>{v}</li>
       ))}
@@ -130,14 +131,14 @@ const EducationEntry = ({ education }: { education: EducationType }) => (
 );
 
 const proficiencyToBg: Record<string, string> = {
-  proficient: "green-500",
+  proficient: "green-400",
   native: "blue-400",
   basic: "gray-300",
 };
 
 const LanguageEntry = ({ language }: { language: LanguageType }) => (
   <div
-    className={`text-xs mr-2 mb-2 px-2 py-1 rounded text-xs bg-${
+    className={`mr-2 mb-2 px-2 py-1 rounded bg-${
       proficiencyToBg[language.level.toLowerCase()]
     }`}
   >
