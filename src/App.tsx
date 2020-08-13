@@ -16,16 +16,21 @@ const Background = styled.div({
     background: "#ececec",
     minHeight: "100vh",
     padding: "8rem 0",
-    "> div": {
-      width: pageSizes[0],
-      minHeight: pageSizes[1],
-      background: "white",
-      margin: "auto",
-      boxShadow: "0px 3px 8px -1px rgba(0,0,0,0.41)",
-      padding: "0.4in",
-      paddingBottom: pagePaddingBottom,
-    },
   },
+});
+
+const Paper = styled.div({
+  "@media only screen": {
+    background: "white",
+    margin: "auto",
+    boxShadow: "0px 3px 8px -1px rgba(0,0,0,0.41)",
+  },
+  width: pageSizes[0],
+  [showPageMarker ? "minHeight" : "height"]: pageSizes[1],
+  padding: "0.4in",
+  paddingBottom: pagePaddingBottom,
+  pageBreakInside: "avoid",
+  position: showPageMarker ? "relative" : "static",
 });
 
 const Marker = styled.div({
@@ -39,7 +44,7 @@ const Marker = styled.div({
 });
 
 const SectionTitle = (props: JSX.IntrinsicElements["h2"]) => (
-  <h2 className="my-2 text-2xl" {...props} />
+  <h2 className="mb-2 text-2xl" {...props} />
 );
 
 export const App = () => {
@@ -47,7 +52,7 @@ export const App = () => {
 
   return (
     <Background className="subpixel-antialiased">
-      <div style={showPageMarker ? { position: "relative" } : {}}>
+      <Paper>
         {showPageMarker && <Marker />}
         <div className="grid grid-cols-3 gap-6">
           <div>
@@ -85,7 +90,7 @@ export const App = () => {
             ))}
           </div>
         </div>
-      </div>
+      </Paper>
     </Background>
   );
 };
