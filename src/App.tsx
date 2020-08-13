@@ -117,7 +117,7 @@ export const App = () => {
 };
 
 const ProfileImage = (props: JSX.IntrinsicElements["img"]) => (
-  <img {...props} src="me.jpeg" />
+  <img {...props} src="me.jpeg" alt="Francesco Zanini" />
 );
 
 const WorkEntry = ({ work }: { work: WorkType }) => (
