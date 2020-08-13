@@ -92,40 +92,39 @@ export const App = () => {
               ))}
             </div>
             <SectionTitle spacing="big">Contacts</SectionTitle>
-            <div>
-              <a
-                className="flex items-center py-2"
-                href="https://www.linkedin.com/in/francesco-zanini/"
-              >
-                <img
-                  className="mr-3 w-6"
-                  src="/icons/linkedin.svg"
-                  alt="LinkedIn Profile"
-                />
-                <pre>francesco-zanini</pre>
-              </a>
-            </div>
-            <div>
-              <a
-                className="flex items-center py-2"
-                href="https://github.com/zaninime"
-              >
-                <img
-                  className="mr-3 w-6"
-                  src="/icons/github.svg"
-                  alt="GitHub Profile"
-                />
-                <pre>zaninime</pre>
-              </a>
-            </div>
-            <div className="items-center py-2 onlyprint-flex">
+            <a
+              className="flex items-center py-2"
+              href="https://www.linkedin.com/in/francesco-zanini/"
+            >
               <img
                 className="mr-3 w-6"
-                src="/icons/cv.svg"
+                src="/icons/linkedin.svg"
+                alt="LinkedIn Profile"
+              />
+              <pre>francesco-zanini</pre>
+            </a>
+            <a
+              className="flex items-center py-2"
+              href="https://github.com/zaninime"
+            >
+              <img
+                className="mr-3 w-6"
+                src="/icons/github.svg"
+                alt="GitHub Profile"
+              />
+              <pre>zaninime</pre>
+            </a>
+            <a
+              className="items-center py-2 onlyprint-flex"
+              href="https://francesco.zanini.me"
+            >
+              <img
+                className="mr-3 w-6"
+                src="/icons/web.svg"
                 alt="This Curriculum Vitae"
               />
-              <pre>francesco.zanini.me/cv/</pre>
-            </div>
+              <pre>francesco.zanini.me</pre>
+            </a>
           </div>
           <div className="col-span-2">
             <SectionTitle>Work Experience</SectionTitle>
