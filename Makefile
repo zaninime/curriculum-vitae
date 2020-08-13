@@ -1,6 +1,5 @@
 .PHONY: all
 all: cv static
-	touch dist/index.html
 
 .PHONY: cv
 cv: dist tsc

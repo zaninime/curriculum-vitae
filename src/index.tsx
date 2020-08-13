@@ -90,19 +90,15 @@ const wrappedApp = (staticData: StaticContextType): JSX.Element => (
 const readStaticData: T.Task<any> = () =>
   fse.readFile("static.yaml", "utf8").then((str) => YAML.parse(str));
 
-const makeDir: T.Task<void> = () => fse.mkdirp("dist/cv");
-
-const writeCv = (content: string): T.Task<void> => () =>
-  fse.writeFile("dist/cv/index.html", content);
+const writePage = (content: string): T.Task<void> => () =>
+  fse.writeFile("dist/index.html", content);
 
 const renderWrappedApp = pipe(
   readStaticData,
   T.chain((staticData) => T.fromIO(render(wrappedApp(staticData))))
 );
 
-const renderAndWriteCv = T.chain(writeCv)(renderWrappedApp);
-
-const app = T.apSecond(renderAndWriteCv)(makeDir);
+const app = T.chain(writePage)(renderWrappedApp);
 
 app().catch((err) => {
   console.error(err);
