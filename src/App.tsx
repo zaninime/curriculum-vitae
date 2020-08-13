@@ -65,8 +65,17 @@ export const App = () => {
             <h1 className="font-semibold text-2xl text-center mb-10">
               Francesco Zanini
             </h1>
-            <SectionTitle spacing="big">Soft-Skills</SectionTitle>
-            <div>TODO!</div>
+            <SectionTitle spacing="big">Skills</SectionTitle>
+            <div className="flex flex-wrap">
+              {staticData.skills.map((v, i) => (
+                <div
+                  className="bg-orange-200 mb-1 mr-2 px-1"
+                  key={`$entry-${i}`}
+                >
+                  {v}
+                </div>
+              ))}
+            </div>
             <SectionTitle spacing="big">Interests</SectionTitle>
             {staticData.interests.map((v, i) => (
               <div key={`$entry-${i}`}>{v}</div>
@@ -173,7 +182,7 @@ const proficiencyToBg: Record<string, string> = {
 
 const LanguageEntry = ({ language }: { language: LanguageType }) => (
   <div
-    className={`mr-2 mb-2 px-2 py-1 rounded bg-${
+    className={`mr-2 mb-2 px-2 bg-${
       proficiencyToBg[language.level.toLowerCase()]
     }`}
   >

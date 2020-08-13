@@ -25,6 +25,7 @@ export interface StaticContextType {
   education: Array<EducationType>;
   languages: Array<LanguageType>;
   interests: string[];
+  skills: string[];
 }
 
 export const StaticContext = React.createContext<StaticContextType>(
