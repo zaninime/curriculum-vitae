@@ -78,7 +78,19 @@ export const App = () => {
               ))}
             </div>
             <SectionTitle spacing="big">Contacts</SectionTitle>
-            <div>TODO!</div>
+            <div>
+              <a
+                className="flex items-center py-2"
+                href="https://www.linkedin.com/in/francesco-zanini/"
+              >
+                <img
+                  className="mr-3 w-6"
+                  src="/icons/linkedin.svg"
+                  alt="LinkedIn Profile"
+                />
+                <pre>francesco-zanini</pre>
+              </a>
+            </div>
           </div>
           <div className="col-span-2">
             <SectionTitle>Work Experience</SectionTitle>
