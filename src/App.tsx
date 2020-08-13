@@ -9,13 +9,14 @@ import {
 
 const showPageMarker = false;
 const pagePaddingBottom = "0.56in";
+const pagePadding = "0.4in";
 const pageSizes = ["210mm", "297mm"];
 
 const Background = styled.div({
   "@media only screen": {
     background: "#ececec",
     minHeight: "100vh",
-    padding: "8rem 0",
+    padding: `${pagePadding} 0`,
   },
 });
 
@@ -27,7 +28,7 @@ const Paper = styled.main({
   },
   width: pageSizes[0],
   [showPageMarker ? "minHeight" : "height"]: pageSizes[1],
-  padding: "0.4in",
+  padding: pagePadding,
   paddingBottom: pagePaddingBottom,
   pageBreakInside: "avoid",
   position: showPageMarker ? "relative" : "static",
