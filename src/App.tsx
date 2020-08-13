@@ -118,6 +118,14 @@ export const App = () => {
                 <pre>zaninime</pre>
               </a>
             </div>
+            <div className="items-center py-2 onlyprint-flex">
+              <img
+                className="mr-3 w-6"
+                src="/icons/cv.svg"
+                alt="This Curriculum Vitae"
+              />
+              <pre>francesco.zanini.me/cv/</pre>
+            </div>
           </div>
           <div className="col-span-2">
             <SectionTitle>Work Experience</SectionTitle>

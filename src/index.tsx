@@ -28,6 +28,13 @@ html {
     display: none;
   }
 }
+
+.onlyprint-flex {
+  display: none;
+  @media only print {
+    display: flex;
+  }
+}
 `;
 
 const render = (appElement: JSX.Element): IO.IO<string> => () => {
