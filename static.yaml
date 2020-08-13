@@ -10,10 +10,10 @@ work:
         set of Scala microservices using Akka HTTP.
       - >-
         Contributed to the technical design of various ETL pipelines, based on
-        (big-)data feeds setup by the data science department, with
-        aggregation, enrichment and writing to Elasticsearch or PostgreSQL.
+        (big-)data feeds set up by the data science department, with
+        aggregation, enrichment, and writing to Elasticsearch or PostgreSQL.
       - >-
-        Launched the first microfrontend of the company. Based on Preact and
+        Launched the first micro-frontend of the company. Based on Preact and
         Unistore, and a small JS runtime.
       - >-
         Relaunched the homepage of the company with many personalized elements,
@@ -31,7 +31,7 @@ work:
         Led the frontend engineering efforts to build a new business vertical
         as the first project using React and Redux in the company.
       - >-
-        Supported the remodernization of the "profile page", by leveraging the
+        Supported the modernization of the "profile page", by leveraging the
         React components previously built.
       - >-
         Wrote a build tool in JS to speed-up the monolithic code-delivery
@@ -44,7 +44,7 @@ freelance:
     location: Mantova, Italy (Remote)
     highlights:
       - >-
-        Setup of a Shopify store with a custom theme, with GDPR compliancy and
+        Setup a Shopify store with a custom theme, with GDPR compliance and
         automatic product bundles based on compatibility matrices.
       - >-
         Developed and deployed a connector between the online store and the
@@ -67,8 +67,8 @@ freelance:
     highlights:
       - >-
         Developed and deployed a push notification proxy to APNS and GCM, to
-        connect the customer-owned appliances to the company's app in a secure
-        and private way. Written in Go.
+        connect the customer-owned appliances to the company's app securely and
+        privately. Written in Go.
       - >-
         Regular Intranet servers and infrastructure maintenance and expansion.
   - workplace: MDM Srl
