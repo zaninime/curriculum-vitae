@@ -96,12 +96,12 @@ languages:
   - name: German
     level: Basic
 interests:
-  - Nix/NixOS contributor on GitHub.
-  - Functional programming paradigm, Haskell.
-  - Information Security.
-  - Embedded, real-time, smart home systems, and software-defined radios.
-  - Hiking and mountain-biking.
-  - Avid reader of news, blogs, and sometimes books.
+  - Nix/NixOS contributor on GitHub
+  - Functional programming paradigm, Haskell
+  - Information Security
+  - Embedded, real-time, smart home systems, and software-defined radios
+  - Hiking and mountain-biking
+  - Avid reader of news, blogs, and sometimes books
 skills:
   - Scala
   - Java

@@ -78,9 +78,13 @@ export const App = () => {
               ))}
             </div>
             <SectionTitle spacing="big">Interests</SectionTitle>
-            {staticData.interests.map((v, i) => (
-              <div key={`$entry-${i}`}>{v}</div>
-            ))}
+            <ul>
+              {staticData.interests.map((v, i) => (
+                <li className="my-2" key={`$entry-${i}`}>
+                  {v}
+                </li>
+              ))}
+            </ul>
             <SectionTitle spacing="big">Languages</SectionTitle>
             <div className="flex flex-wrap">
               {staticData.languages.map((v, i) => (
