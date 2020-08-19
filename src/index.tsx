@@ -61,7 +61,7 @@ const render = (appElement: JSX.Element): IO.IO<string> => () => {
   const { app, styleElement } = renderAppWithStyles();
 
   const shell = (
-    <html>
+    <html lang="en">
       <head>
         <title>Francesco Zanini - Curriculum Vitae</title>
         <meta name="robots" content="noindex,follow" />
